@@ -7,6 +7,7 @@ class pascal {
         System.out.println("How many lines of PASCAL'S TRIANGLE would you like to see?")
         int n = sc.nextInt();
         
+        printArray(triangle(n));                    // call both methods
         
     }
     
@@ -26,10 +27,10 @@ class pascal {
             }
         }
         
-        
+        return array;                               // return pascal's array
     }
     
-    public static void printArray(int[][] a) {
+    public static void printArray(int[][] a) {      // print array
         for (int i=0; i<a.length; i++) {
             for (int j=0; j<a.length; j++) {
                 System.out.print(a[i][j]);
