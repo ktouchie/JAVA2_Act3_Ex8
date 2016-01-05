@@ -11,33 +11,32 @@ class pascal {
     }
     
     public static int[][] triangle(int x) {
-        int[][] array = new int[x][x];          // declare array with x lines and x columns
+        int[][] array = new int[x+1][x+1];          // declare array with x+1 lines and x+1 columns
         int j=0;
-        for (int i=0; i<array.length; i++) {    // fill in all the 1s
+        for (int i=0; i<=x; i++) {                  // fill in all the 1s
             array[i][0]=1;
             array[i][j]=1;
             j++
         }
-        
+        if (x>1) {                                  // if triangle is big enough, add rest of pascal's numbers
+            for (int p=2; p<=x; p++) {
+                for (int q=1; q<x; q++) {
+                    array[p][q] = array[p-1][q-1]+array[p-1][q];
+                }
+            }
+        }
         
         
     }
     
     public static void printArray(int[][] a) {
-        for (int i=0; i<x; i++) {
-            for (int j=0; j<x; j++) {
+        for (int i=0; i<a.length; i++) {
+            for (int j=0; j<a.length; j++) {
                 System.out.print(a[i][j]);
             }
             System.out.println("");
         }
     }
-    
-    public static int sumRow(int[][] a, int b) {        
-        int sum = 0;        
-        for (int i=0; i<a.length; i++) {
-            sum += a[b][i];
-        }        
-        return sum;
-    }
+
     
 }
