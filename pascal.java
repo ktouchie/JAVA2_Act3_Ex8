@@ -32,4 +32,12 @@ class pascal {
         }
     }
     
+    public static int sumRow(int[][] a, int b) {        
+        int sum = 0;        
+        for (int i=0; i<a.length; i++) {
+            sum += a[b][i];
+        }        
+        return sum;
+    }
+    
 }
